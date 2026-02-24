@@ -1,0 +1,19 @@
+name: SetSpawn
+version: '1.0'
+main: MadeByWorty1.setSpawn.SetSpawn
+api-version: '1.21'
+author: Worty1
+website: https://github.com/WortyXD
+
+commands:
+  setspawn:
+    description: Spawn Noktasını Ayarlar
+    usage: /setspawn
+  spawn:
+    description: Spawn Noktasına Işınlar
+    usage: /spawn
+
+permissions:
+  setspawn.use:
+    description: Spawn Ayarlama Yetkisi
+    default: op

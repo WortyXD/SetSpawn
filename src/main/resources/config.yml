@@ -1,0 +1,5 @@
+messages:
+  spawn-set: "&aSpawn Başarıyla Ayarlandı."
+  spawn-teleport: "&8[&bSunucunuz&8] &aSpawn Noktasına Başarıyla Işınlandın."
+  spawn-not-set: "&cSpawn Henüz Ayarlanmadı."
+  no-permission: "&cBu Komutu Kullanmak İçin Yetkin Yok."
