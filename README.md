@@ -27,4 +27,4 @@ Spawn Ayarlama, Spawn’a Işınlanma ve Oyuncular Sunucuya Girdiğinde Otomatik
 | Permission | Açıklama |
 |-----------|---------|
 | `setspawn.use` | `/setspawn` Komutunu Kullanma |
-> `/spawn` Komutu İçin Permission Gerekmez"
+| `/spawn` | Bu Komut İçin Permission Gerekmez"
