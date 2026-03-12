@@ -19,14 +19,14 @@ public class SpawnCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Bu Komut Sadece Oyuncular İçindir.");
+            sender.sendMessage(plugin.getConfig().getString("messages.console-only", "&cThis command can only be used by players.").replace("&", "§"));
             return true;
         }
 
         Player player = (Player) sender;
 
-        if (!plugin.getConfig().contains("spawn.world")) {
-            player.sendMessage(plugin.getConfig().getString("messages.spawn-not-set")
+        if (!plugin.getConfig().contains("spawn.world") || plugin.getConfig().getString("spawn.world", "").isEmpty()) {
+            player.sendMessage(plugin.getConfig().getString("messages.spawn-not-set", "&cSpawn location has not been set yet. Please contact an admin.")
                     .replace("&", "§"));
             return true;
         }
@@ -41,7 +41,7 @@ public class SpawnCommand implements CommandExecutor {
         );
 
         player.teleport(spawn);
-        player.sendMessage(plugin.getConfig().getString("messages.spawn-teleport")
+        player.sendMessage(plugin.getConfig().getString("messages.spawn-teleport", "&aYou have been teleported to spawn.")
                 .replace("&", "§"));
 
         return true;

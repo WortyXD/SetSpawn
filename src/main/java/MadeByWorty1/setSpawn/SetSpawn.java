@@ -12,11 +12,11 @@ public final class SetSpawn extends JavaPlugin {
         getCommand("spawn").setExecutor(new SpawnCommand(this));
 
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
-        getLogger().info("Spawn Sistemi Aktif!");
+        getLogger().info("SetSpawn Enabled!");
     }
 
     @Override
     public void onDisable() {
-        getLogger().info("Spawn Sistemi Kapatıldı!");
+        getLogger().info("SetSpawn Disabled!");
     }
 }

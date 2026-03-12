@@ -18,14 +18,15 @@ public class SetSpawnCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage("Bu Komut Sadece Oyuncular İçindir.");
+            sender.sendMessage(plugin.getConfig().getString("messages.console-only", "&cThis command can only be used by players.").replace("&", "§"));
             return true;
         }
 
         Player player = (Player) sender;
+        String permission = plugin.getConfig().getString("permission", "setspawn.use");
 
-        if (!player.hasPermission("setspawn.use")) {
-            player.sendMessage(plugin.getConfig().getString("messages.no-permission")
+        if (!player.hasPermission(permission)) {
+            player.sendMessage(plugin.getConfig().getString("messages.no-permission", "&cYou don't have permission to use this command.")
                     .replace("&", "§"));
             return true;
         }
@@ -41,7 +42,7 @@ public class SetSpawnCommand implements CommandExecutor {
 
         plugin.saveConfig();
 
-        player.sendMessage(plugin.getConfig().getString("messages.spawn-set")
+        player.sendMessage(plugin.getConfig().getString("messages.spawn-set", "&aSpawn location has been set to your current position.")
                 .replace("&", "§"));
         return true;
     }

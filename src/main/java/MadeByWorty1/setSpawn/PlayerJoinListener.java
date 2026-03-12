@@ -19,7 +19,11 @@ public class PlayerJoinListener implements Listener {
     public void onJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
 
-        if (!plugin.getConfig().contains("spawn.world")) {
+        if (!plugin.getConfig().getBoolean("teleport-on-join", true)) {
+            return;
+        }
+
+        if (!plugin.getConfig().contains("spawn.world") || plugin.getConfig().getString("spawn.world", "").isEmpty()) {
             return;
         }
 

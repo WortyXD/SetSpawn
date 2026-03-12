@@ -1,5 +1,29 @@
+# ============================================
+# SetSpawn Plugin Configuration
+# ============================================
+
+# Permission node required to use /setspawn command
+permission: "setspawn.use"
+
+# Should players be teleported to spawn when they join the server?
+teleport-on-join: true
+
+# Delay in seconds before teleporting (0 for instant)
+teleport-delay: 0
+
+# Spawn location coordinates (set automatically by /setspawn)
+spawn:
+  world: ""
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  yaw: 0.0
+  pitch: 0.0
+
+# Messages
 messages:
-  spawn-set: "&aSpawn Başarıyla Ayarlandı."
-  spawn-teleport: "&8[&bSunucunuz&8] &aSpawn Noktasına Başarıyla Işınlandın."
-  spawn-not-set: "&cSpawn Henüz Ayarlanmadı."
-  no-permission: "&cBu Komutu Kullanmak İçin Yetkin Yok."
+  no-permission: "&cYou don't have permission to use this command."              # Shown when player lacks permission
+  spawn-set: "&aSpawn location has been set to your current position."             # Shown when spawn is set successfully
+  spawn-not-set: "&cSpawn location has not been set yet. Please contact an admin." # Shown when /spawn used but spawn not set
+  spawn-teleport: "&aYou have been teleported to spawn."                           # Shown when player teleports to spawn
+  console-only: "&cThis command can only be used by players."                      # Shown when console tries player-only command
